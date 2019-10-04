@@ -23,7 +23,7 @@ STAR --runThreadN 24 --runMode genomeGenerate \
 --sjdbGTFfile </path/to/annotations/gencode.v19.annotation.gtf> \
 --sjdbOverhang 99
 ```
-The --runThreadN flag should be set to the number of avaiable cores on the node. The genome index that this process creates will be stored in a new directory, designated by the --genomeDir flag. It will henseforth be referred to as <path/to/genome>.
+The `--runThreadN` flag should be set to the number of avaiable cores on the node. The genome index that this process creates will be stored in a new directory, designated by the `--genomeDir` flag. It will henseforth be referred to as `<path/to/genome>`.
 
 **2. Align the Expression Data to the Reference Genome**
 ```
