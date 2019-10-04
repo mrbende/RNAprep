@@ -78,5 +78,7 @@ To isolate the gene IDs and FPKM values, the simplest way is to run the followin
 cat SAMPLE_NAME.genes.results | awk '{print $1,$7}' > SAMPLE_NAME.fpkm.txt
 ```
 
-This is the ultimate result, 
+This is the ultimate result, a vector of FPKM expression values for the sample, matched with Ensembl gene IDs. For instructions on appending this vector to a pre-existing Gene Expression Matrix (GEM), continue on!
+
+**5. Downloading and Processing Tissue Data**
 
