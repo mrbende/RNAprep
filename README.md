@@ -44,3 +44,6 @@ STAR --runThreadN 24 --runMode alignReads \
 --alignSJoverhangMin 1 \
 --alignSJDBoverhangMin 8 
 ```
+By specifying the option  `--quantMode TranscriptomeSAM`, STAR will output a file `Aligned.toTranscriptome.bam`. This is what we will use for RSEM. For more information regarding these paramters, refer to the [STAR manual](http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf).
+
+**3. RSEM Prepare Genome Reference
