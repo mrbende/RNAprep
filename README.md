@@ -13,16 +13,16 @@ The **comprehensive gene annotation list** can be found [here](http://ftp.ebi.ac
 NOTE: If you plan to append the sample of RNAseq data to an existing matrix of samples, [GEMprep](https://github.com/SystemsGenetics/GEMprep) offers an easy method of performing quantile normalization.
 
 ## Process
-This process was developed using Clemson University's Palmetto Cluster, which utilizes the Portable Batch Scheduling system (PBS) to manage job submission. Most commands were wrapped into independent scripts that specified resource allocation and the exact command line parameters. The code is copied below, but considering the large resource requirements of these processes it is recommended that the submitted as batch jobs if possible. 
+This process was developed using Clemson University's Palmetto Cluster, which utilizes the Portable Batch Scheduling system (PBS) to manage job submission. Most commands were wrapped into independent scripts that specified resource allocation and the exact command line parameters. The code is copied below, but considering the large resource requirements of these processes it is recommended that the submitted as batch jobs if possible. It is also important that the STAR executable as well as the RSEM commands are recognizable within the system path, or otherwise are explicitly directed.
 
 **1. Generate the Genome Index**
 ```
 STAR --runThreadN 24 --runMode genomeGenerate \
 --genomeDir <path/to/desired/output/directory> \
---genomeFastaFiles <path/to/USCS/genome/hg189.fa> \
+--genomeFastaFiles <path/to/genome/fasta/hg19.fa> \
 --sjdbGTFfile </path/to/annotations/gencode.v19.annotation.gtf> \
 --sjdbOverhang 99
 ```
-
+The --runThreadN flag should be set to the number of avaiable cores on the node.
 
 
