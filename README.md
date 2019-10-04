@@ -53,7 +53,7 @@ If your fastq files are not pair-end reads, you will only have one read to input
 </path/to/RSEM/rsem-prepare-reference> -p 24 --star \
 --gtf </path/to/annotations/gencode.v19.annotation.gtf> \
 </path/to/genome/fasta/hg19.fa> \
-/path/to/desired/output/human_ref/hg19
+</path/to/desired/output/human_ref/hg19>
 ```
 The -p flag replaces the `--runThreadN` flag before, and still represnts the number of threads available. This command takes the same inputs as when genrating the genome index with STAR, however greates a unique reference directory for use with RSEM. Ensure that this output directory does not overwrite the directory generated with STAR, as it will be used in the next step... 
 
@@ -64,6 +64,11 @@ The -p flag replaces the `--runThreadN` flag before, and still represnts the num
 </path/to/output/human_ref/hg19> \
 </path/to/desired/FPKM/outputs/SAMPLE_NAME>
 ```
-If the initial expression data was not paired-end, remove the `--paired-end` flag. The end result will be a file `SAMPLE_NAME.genes.results`. This will contain ensembl gene Ids, FPKM values, along with other extraneous information. 
+If the initial expression data was not paired-end, remove the `--paired-end` flag. The end result will be a file `SAMPLE_NAME.genes.results`. This will contain ensembl gene IDs, FPKM values, along with other extraneous information. 
+
+To isolate the gene IDs and FPKM values, the simplest way is to run the following in a bash environment:
+```
+cat SAMPLE_NAME.genes.results | awk '{print $1,$7}' > SAMPLE_NAME.fpkm.txt
+```
 
 
