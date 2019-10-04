@@ -7,7 +7,7 @@ The **hg19** (GRCh37) build of the USCS human reference genome can be found [her
 The **comprehensive gene annotation list** can be found [here](http://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19). These are GENCODE annotations specific to the hg19 build of the human genome reference chromosomes and were downloaded in gtf format. 
 
 ## Tools
-..* [STAR](https://github.com/alexdobin/STAR/releases/tag/STAR_2.4.2a) aligner v2.4.2
-..* RSEM was used to quantify expression and can be cloned from this [git repo](https://github.com/deweylab/RSEM)
+  * [STAR](https://github.com/alexdobin/STAR/releases/tag/STAR_2.4.2a) aligner v2.4.2
+  * RSEM was used to quantify expression and can be cloned from this [git repo](https://github.com/deweylab/RSEM)
 
 NOTE: If you plan to append the sample of RNAseq data to an existing matrix of samples, [GEMprep](https://github.com/SystemsGenetics/GEMprep) offers an easy method of performing quantile normalization.
