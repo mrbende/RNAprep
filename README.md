@@ -46,4 +46,13 @@ STAR --runThreadN 24 --runMode alignReads \
 ```
 By specifying the option  `--quantMode TranscriptomeSAM`, STAR will output a file `Aligned.toTranscriptome.bam`. This is what we will use for RSEM. For more information regarding these paramters, refer to the [STAR manual](http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf).
 
-**3. RSEM Prepare Genome Reference
+**3. RSEM Prepare Genome Reference**
+```
+</path/to/RSEM/rsem-prepare-reference> -p 24 --star \
+--gtf </path/to/annotations/gencode.v19.annotation.gtf> \
+</path/to/genome/fasta/hg19.fa> \
+/path/to/desired/output/human_ref/hg19
+```
+This command takes the same outputs as when genrating the genome index with STAR, however greates a unique reference directory for use with RSEM. Ensure that this output directory does not overwrite the directory generated with STAR. 
+
+**4. RSEM calculate expression***
