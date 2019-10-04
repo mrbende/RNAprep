@@ -18,20 +18,20 @@ This process was developed using Clemson University's Palmetto Cluster, which ut
 **1. Generate the Genome Index**
 ```
 STAR --runThreadN 24 --runMode genomeGenerate \
---genomeDir </path/to/desired/output/directory> \
---genomeFastaFiles </path/to/genome/fasta/hg19.fa> \
---sjdbGTFfile </path/to/annotations/gencode.v19.annotation.gtf> \
+--genomeDir /path/to/desired/output/directory \
+--genomeFastaFiles /path/to/genome/fasta/hg19.fa \
+--sjdbGTFfile /path/to/annotations/gencode.v19.annotation.gtf \
 --sjdbOverhang 99
 ```
-The `--runThreadN` flag should be set to the number of avaiable cores on the node. The genome index that this process creates will be stored in a new directory, designated by the `--genomeDir` flag. It will henseforth be referred to as `<path/to/genome>`.
+The `--runThreadN` flag should be set to the number of avaiable cores on the node. The genome index that this process creates will be stored in a new directory, designated by the `--genomeDir` flag. It will henseforth be referred to as `/path/to/genome`.
 
 **2. Align the Expression Data to the Reference Genome**
 ```
 STAR --runThreadN 24 --runMode alignReads \
 --outSAMtype BAM Unsorted SortedByCoordinate \
---genomeDir </path/to/genome> \
---outFileNamePrefix </path/to/output/DESIRED_FILE_PREFIX> \
---readFilesIn </path/to/lane1/read1,/path/to/lane2/read1 /path/to/lane1/read2,/path/to/lane2/read2>
+--genomeDir /path/to/genome \
+--outFileNamePrefix /path/to/output/DESIRED_FILE_PREFIX \
+--readFilesIn /path/to/lane1/read1,/path/to/lane2/read1 /path/to/lane1/read2,/path/to/lane2/read2
 --outFilterType BySJout \
 --outSAMattributes NH HI AS NM MD \
 --outFilterMultimapNmax 20 \
@@ -50,19 +50,24 @@ If your fastq files are not pair-end reads, you will only have one read to input
 
 **3. RSEM Prepare Genome Reference**
 ```
-</path/to/RSEM/rsem-prepare-reference> -p 24 --star \
---gtf </path/to/annotations/gencode.v19.annotation.gtf> \
-</path/to/genome/fasta/hg19.fa> \
-</path/to/desired/output/human_ref/hg19>
+/path/to/RSEM/rsem-prepare-reference -p 24 --star \
+--gtf /path/to/annotations/gencode.v19.annotation.gtf \
+/path/to/genome/fasta/hg19.fa \
+/path/to/desired/output/human_ref/hg19
 ```
 The -p flag replaces the `--runThreadN` flag before, and still represnts the number of threads available. This command takes the same inputs as when genrating the genome index with STAR, however greates a unique reference directory for use with RSEM. Ensure that this output directory does not overwrite the directory generated with STAR, as it will be used in the next step... 
 
 **4. RSEM calculate expression**
+Before calculating expression, it is important to verify that the input files are valid because we used an alternate aligner (RSEM defaults to Bowtie aligner, this process uses STAR). RSEM requires that the two mates of any paired-end alignements be adjacent. To check this, run the following:
 ```
-</path/to/RSEM/rsem-calculate-expression> --alignments --paired-end -p 24 \
-</path/to/STARaligned/DESIRED_FILE_PREFIX.toTranscriptome.out.bam> \
-</path/to/output/human_ref/hg19> \
-</path/to/desired/FPKM/outputs/SAMPLE_NAME>
+/path/to/RSEM/rsem-sam-validator DESIRED_FILE_PREFIXAligned.toTranscriptome.out.bam
+
+```
+```
+/path/to/RSEM/rsem-calculate-expression --alignments --paired-end -p 24 \
+/path/to/STARaligned/DESIRED_FILE_PREFIXAligned.toTranscriptome.out.bam \
+/path/to/output/human_ref/hg19 \
+/path/to/desired/FPKM/outputs/SAMPLE_NAME
 ```
 If the initial expression data was not paired-end, remove the `--paired-end` flag. The end result will be a file `SAMPLE_NAME.genes.results`. This will contain ensembl gene IDs, FPKM values, along with other extraneous information. 
 
@@ -71,4 +76,5 @@ To isolate the gene IDs and FPKM values, the simplest way is to run the followin
 cat SAMPLE_NAME.genes.results | awk '{print $1,$7}' > SAMPLE_NAME.fpkm.txt
 ```
 
+This is the ultimate result, 
 
