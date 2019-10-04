@@ -46,6 +46,8 @@ STAR --runThreadN 24 --runMode alignReads \
 ```
 By specifying the option  `--quantMode TranscriptomeSAM`, STAR will output a file `Aligned.toTranscriptome.bam`. This is what we will use for RSEM. For more information regarding these paramters, refer to the [STAR manual](http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf).
 
+If your fastq files are not pair-end reads, you will only have one read to input. Not all illumina results will appear in different 'lane' files, as this largely depends on the size of the inputs and numebr of genes sequenced. Alter this input to represent your data.
+
 **3. RSEM Prepare Genome Reference**
 ```
 </path/to/RSEM/rsem-prepare-reference> -p 24 --star \
@@ -53,6 +55,15 @@ By specifying the option  `--quantMode TranscriptomeSAM`, STAR will output a fil
 </path/to/genome/fasta/hg19.fa> \
 /path/to/desired/output/human_ref/hg19
 ```
-This command takes the same outputs as when genrating the genome index with STAR, however greates a unique reference directory for use with RSEM. Ensure that this output directory does not overwrite the directory generated with STAR. 
+The -p flag replaces the `--runThreadN` flag before, and still represnts the number of threads available. This command takes the same inputs as when genrating the genome index with STAR, however greates a unique reference directory for use with RSEM. Ensure that this output directory does not overwrite the directory generated with STAR, as it will be used in the next step... 
 
-**4. RSEM calculate expression***
+**4. RSEM calculate expression**
+```
+</path/to/RSEM/rsem-calculate-expression> --alignments --paired-end -p 24 \
+</path/to/STARaligned/DESIRED_FILE_PREFIX.toTranscriptome.out.bam> \
+</path/to/output/human_ref/hg19> \
+</path/to/desired/FPKM/outputs/SAMPLE_NAME>
+```
+If the initial expression data was not paired-end, remove the `paired-end` flag. The end result will be a file `SAMPLE_NAME.genes.results`. This will contain ensembl gene Ids, FPKM values, along with other extraneous information. 
+
+
