@@ -64,6 +64,6 @@ The -p flag replaces the `--runThreadN` flag before, and still represnts the num
 </path/to/output/human_ref/hg19> \
 </path/to/desired/FPKM/outputs/SAMPLE_NAME>
 ```
-If the initial expression data was not paired-end, remove the `paired-end` flag. The end result will be a file `SAMPLE_NAME.genes.results`. This will contain ensembl gene Ids, FPKM values, along with other extraneous information. 
+If the initial expression data was not paired-end, remove the `--paired-end` flag. The end result will be a file `SAMPLE_NAME.genes.results`. This will contain ensembl gene Ids, FPKM values, along with other extraneous information. 
 
 
