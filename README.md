@@ -18,8 +18,8 @@ This process was developed using Clemson University's Palmetto Cluster, which ut
 **1. Generate the Genome Index**
 ```
 STAR --runThreadN 24 --runMode genomeGenerate \
---genomeDir <path/to/desired/output/directory> \
---genomeFastaFiles <path/to/genome/fasta/hg19.fa> \
+--genomeDir </path/to/desired/output/directory> \
+--genomeFastaFiles </path/to/genome/fasta/hg19.fa> \
 --sjdbGTFfile </path/to/annotations/gencode.v19.annotation.gtf> \
 --sjdbOverhang 99
 ```
@@ -29,9 +29,9 @@ The --runThreadN flag should be set to the number of avaiable cores on the node.
 ```
 STAR --runThreadN 24 --runMode alignReads \
 --outSAMtype BAM Unsorted SortedByCoordinate \
---genomeDir /scratch2/mrbende/hg19_index \
---outFileNamePrefix /scratch2/mrbende/BillNormal \
---readFilesIn /scratch2/mrbende/BILL/K1445_N1b_262_315_S152_L002_R1_001.fastq,/scratch2/mrbende/BILL/K1445_N1b_262_315_S18_L003_R1_001.fastq,/scratch2/mrbende/ <continued...>
+--genomeDir </path/to/genome> \
+--outFileNamePrefix </path/to/output/DESIRED_FILE_PREFIX> \
+--readFilesIn </path/to/lane1/read1,/path/to/lane2/read1 /path/to/lane1/read2,/path/to/lane2/read2>
 --outFilterType BySJout \
 --outSAMattributes NH HI AS NM MD \
 --outFilterMultimapNmax 20 \
