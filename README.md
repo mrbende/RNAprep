@@ -23,6 +23,24 @@ STAR --runThreadN 24 --runMode genomeGenerate \
 --sjdbGTFfile </path/to/annotations/gencode.v19.annotation.gtf> \
 --sjdbOverhang 99
 ```
-The --runThreadN flag should be set to the number of avaiable cores on the node.
+The --runThreadN flag should be set to the number of avaiable cores on the node. The genome index that this process creates will be stored in a new directory, designated by the --genomeDir flag. It will henseforth be referred to as <path/to/genome>.
 
-
+**2. Align the Expression Data to the Reference Genome**
+```
+STAR --runThreadN 24 --runMode alignReads \
+--outSAMtype BAM Unsorted SortedByCoordinate \
+--genomeDir /scratch2/mrbende/hg19_index \
+--outFileNamePrefix /scratch2/mrbende/BillNormal \
+--readFilesIn /scratch2/mrbende/BILL/K1445_N1b_262_315_S152_L002_R1_001.fastq,/scratch2/mrbende/BILL/K1445_N1b_262_315_S18_L003_R1_001.fastq,/scratch2/mrbende/ <continued...>
+--outFilterType BySJout \
+--outSAMattributes NH HI AS NM MD \
+--outFilterMultimapNmax 20 \
+--outFilterMismatchNmax 999 \
+--outFilterMismatchNoverLmax 0.04 \
+--alignIntronMin 20 \
+--alignIntronMax 1000000 \
+--alignMatesGapMax 1000000 \
+--quantMode TranscriptomeSAM \
+--alignSJoverhangMin 1 \
+--alignSJDBoverhangMin 8 
+```
