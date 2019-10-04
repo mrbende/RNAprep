@@ -58,11 +58,13 @@ If your fastq files are not pair-end reads, you will only have one read to input
 The -p flag replaces the `--runThreadN` flag before, and still represnts the number of threads available. This command takes the same inputs as when genrating the genome index with STAR, however greates a unique reference directory for use with RSEM. Ensure that this output directory does not overwrite the directory generated with STAR, as it will be used in the next step... 
 
 **4. RSEM calculate expression**
+
 Before calculating expression, it is important to verify that the input files are valid because we used an alternate aligner (RSEM defaults to Bowtie aligner, this process uses STAR). RSEM requires that the two mates of any paired-end alignements be adjacent. To check this, run the following:
 ```
 /path/to/RSEM/rsem-sam-validator DESIRED_FILE_PREFIXAligned.toTranscriptome.out.bam
-
 ```
+This could take some time, depending on the size of the bam file. If the command returns `The input file is valid!` then you are good to go! Now for the ultimate step of finally calculating expression...
+
 ```
 /path/to/RSEM/rsem-calculate-expression --alignments --paired-end -p 24 \
 /path/to/STARaligned/DESIRED_FILE_PREFIXAligned.toTranscriptome.out.bam \
