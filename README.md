@@ -16,7 +16,8 @@ NOTE: If you plan to append the sample of RNAseq data to an existing matrix of s
 This process was developed using Clemson University's Palmetto Cluster, which utilizes the Portable Batch Scheduling system (PBS) to manage job submission. Most commands were wrapped into independent scripts that specified resource allocation and the exact command line parameters. The code is copied below, but considering the large resource requirements of these processes it is recommended that the submitted as batch jobs if possible. 
 
 **1. Generate the Genome Index**
-```STAR --runThreadN 24 --runMode genomeGenerate \
+```
+STAR --runThreadN 24 --runMode genomeGenerate \
 --genomeDir <path/to/desired/output/directory> \
 --genomeFastaFiles <path/to/USCS/genome/hg189.fa> \
 --sjdbGTFfile </path/to/annotations/gencode.v19.annotation.gtf> \
