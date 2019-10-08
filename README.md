@@ -87,8 +87,18 @@ This [study](https://www.nature.com/articles/sdata201861) published the initial 
 
 ![alt text](https://github.com/mrbende/RNAprep/blob/master/sdata201861-f1.jpg "Processing Method")
 
-Here, we download the tissue datasets of interest from the public database. These files present normalized gene expression levels, in FPKM format, after being corrected for batch variations between GTEx and TCGA. These files, divided into independent files by tissue type, can be viewed in [figshare](https://figshare.com/articles/Data_record_3/5330593). Particular datasets of interest can be downloaded independently, or all can be downloaded.
+Here, we download the tissue datasets of interest from the public database. These files present normalized gene expression levels, in FPKM format, after being corrected for batch variations between GTEx and TCGA. These files, divided into independent files by tissue type, can be viewed in [figshare](https://figshare.com/articles/Data_record_3/5330593). Particular datasets of interest can be downloaded independently, or all can be downloaded together.
 
+The rest of this documentation will use the kidney data for example. The following files were then downlaoded from the fileshare:
+'''
+kidney-rsem-fpkm-gtex.txt
+kirp-rsem-fpkm-tcga-t.txt
+kirp-rsem-fpkm-tcga.txt
+kich-rsem-fpkm-tcga-t.txt
+kich-rsem-fpkm-tcga.txt
+kirc-rsem-fpkm-tcga-t.txt
+kirc-rsem-fpkm-tcga.txt
+'''
 
 
 
