@@ -84,4 +84,6 @@ This is the ultimate result, a vector of FPKM expression values for the sample, 
 **5. Downloading and Processing Tissue Data**
 
 This [study](https://www.nature.com/articles/sdata201861) published the initial method for combining GTEx and TCGA data by a common processing method. The overview of this method is pictured below.
+
 ![processing image](mrbende/RNAprep/sdata201861-f1.jpg)
+Format: ![Alt Text](url)
