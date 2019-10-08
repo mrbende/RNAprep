@@ -111,7 +111,7 @@ source deactivate
 ```
 All of the downloaded Gene Expression Matrices (GEMs) should be added to the same directory, containing **only** these files. Then, to activate the conda environment for running the python script...
 ```
-source activate myenv
+conda activate myenv
 ```
 
 
