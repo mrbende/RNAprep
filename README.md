@@ -101,5 +101,12 @@ kirc-rsem-fpkm-tcga.txt
 ```
 KIRP, KICH, and KIRC are three subtypes of renal cell carcinoma. The tcga data is divided into the tumor samples, denoted as `*-tcga-t.txt`, and healthy tissue samples, denotes as `*-tcga.txt`. We also downloaded the gtex samples, which can now be direcly evaluated with the tcga normal samples. 
 
+The recommended way to use the scripts in this repository is with an Anaconda environment. This is the Anaconda environemnt used by GEMprep later, but we will need some of these packages before then. To create an Anaconda environment:
+```bash
+module add anaconda3/5.1.0
+
+conda create -n myenv python=3.6 matplotlib mpi4py numpy pandas r scikit-learn seaborn
+```
+
 
 
