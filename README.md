@@ -8,7 +8,8 @@ The **comprehensive gene annotation list** can be found [here](http://ftp.ebi.ac
 
 ## Tools
 * [STAR](https://github.com/alexdobin/STAR/releases/tag/STAR_2.4.2a) aligner v2.4.2
-* RSEM was used to quantify expression and can be cloned from this [git repo](https://github.com/deweylab/RSEM).
+* [RSEM](https://github.com/deweylab/RSEM) quantification
+* [GEMprep](https://github.com/SystemsGenetics/GEMprep) repository tools
 
 NOTE: If you plan to append the sample of RNAseq data to an existing matrix of samples, [GEMprep](https://github.com/SystemsGenetics/GEMprep) offers an easy method of performing quantile normalization.
 
