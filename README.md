@@ -113,5 +113,7 @@ All of the downloaded Gene Expression Matrices (GEMs) should be added to the sam
 ```
 conda activate myenv
 ```
-
+The `gemmaker.py` script in this repo is used to merge all of the GEMs located in the directory while aligning the genes. It is important to make note of the first lines in this python script.
+```
+```
 
