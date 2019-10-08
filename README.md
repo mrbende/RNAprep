@@ -98,7 +98,7 @@ kich-rsem-fpkm-tcga-t.txt
 kich-rsem-fpkm-tcga.txt
 kirc-rsem-fpkm-tcga-t.txt
 kirc-rsem-fpkm-tcga.txt
-```
+```# This is the name of the output GEM
 KIRP, KICH, and KIRC are three subtypes of renal cell carcinoma. The tcga data is divided into the tumor samples, denoted as `*-tcga-t.txt`, and healthy tissue samples, denotes as `*-tcga.txt`. We also downloaded the gtex samples, which can now be direcly evaluated with the tcga normal samples. 
 
 The recommended way to use the scripts in this repository is with an Anaconda environment. This is the Anaconda environemnt used by GEMprep later, but we will need some of these packages before then. To create an Anaconda environment:
@@ -123,4 +123,11 @@ GEM_file = 'kidney_FPKM.txt'
 ```
 These variables should be changed to reflect your environment. `dir_path` should be the absolute path where the directory containing the GEMs is located. The labels file being generated will be relevant in downstream applications so just make note of it here. `GEM_file` will be the GEM that is created containing FPKM values of all samples.
 
-**6. Appending the sample expression data to this larger dataset **
+Once editing these script variables, simply run the python code. Note that it requires python3, so check the version.
+```
+python gemmaker.py
+```
+
+**6. Appending the sample expression data to this larger dataset**
+
+Once the GEM of tissue samples has been created...
