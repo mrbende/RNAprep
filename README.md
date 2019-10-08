@@ -122,3 +122,5 @@ labels_file = 'kidney-labels.txt'
 GEM_file = 'kidney_FPKM.txt'
 ```
 These variables should be changed to reflect your environment. `dir_path` should be the absolute path where the directory containing the GEMs is located. The labels file being generated will be relevant in downstream applications so just make note of it here. `GEM_file` will be the GEM that is created containing FPKM values of all samples.
+
+**6. Appending the sample expression data to this larger dataset **
