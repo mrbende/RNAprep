@@ -115,11 +115,10 @@ conda activate myenv
 ```
 The `gemmaker.py` script in this repo is used to merge all of the GEMs located in the directory while aligning the genes. It is important to make note of the beginnign of this python script.
 ```
-# This is the absolute path to the directory containing your files
 dir_path = '/scratch2/mrbende/KIDNEY/'
-# This is the name of the output labels file for tsne plotting
+
 labels_file = 'kidney-labels.txt'
-# This is the name of the output GEM
+
 GEM_file = 'kidney_FPKM.txt'
 ```
-These variables should be changed to reflect your environment. The labels file being generated will be relevant in downstream applications so just make note of it here.
+These variables should be changed to reflect your environment. `dir_path` should be the absolute path where the directory containing the GEMs is located. The labels file being generated will be relevant in downstream applications so just make note of it here. `GEM_file` will be the GEM that is created containing FPKM values of all samples.
