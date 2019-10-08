@@ -1,4 +1,4 @@
-# This code will take a directory containing GTEX-TCGA samples and combine them into a single GEM
+# This code will take a directory containing GTEx-TCGA samples and combine them into a single GEM
 
 print('Loading modules...')
 import pandas as pd
@@ -7,10 +7,8 @@ import os
 
 # This is the absolute path to the directory containing your files
 dir_path = '/scratch2/mrbende/KIDNEY/'
-
 # This is the name of the output labels file for tsne plotting
 labels_file = 'kidney-labels.txt'
-
 # This is the name of the output GEM
 GEM_file = 'kidney_FPKM.txt'
 
