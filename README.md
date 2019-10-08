@@ -106,7 +106,12 @@ The recommended way to use the scripts in this repository is with an Anaconda en
 module add anaconda3/5.1.0
 
 conda create -n myenv python=3.6 matplotlib mpi4py numpy pandas r scikit-learn seaborn
-```
 
+source deactivate
+```
+All of the downloaded Gene Expression Matrices (GEMs) should be added to the same directory, containing **only** these files. Then, to activate the conda environment for running the python script...
+```
+source activate myenv
+```
 
 
