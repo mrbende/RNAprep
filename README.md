@@ -82,4 +82,5 @@ cat SAMPLE_NAME.genes.results | awk '{print $1,$7}' > SAMPLE_NAME.fpkm.txt
 This is the ultimate result, a vector of FPKM expression values for the sample, matched with Ensembl gene IDs. For instructions on appending this vector to a pre-existing Gene Expression Matrix (GEM), continue on!
 
 **5. Downloading and Processing Tissue Data**
+This [study](https://www.nature.com/articles/sdata201861) published the initial method for combining GTEx and TCGA data by a common processing method. The overview of this method is pictured below.
 
