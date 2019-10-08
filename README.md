@@ -99,7 +99,7 @@ kich-rsem-fpkm-tcga.txt
 kirc-rsem-fpkm-tcga-t.txt
 kirc-rsem-fpkm-tcga.txt
 ```
-
+KIRP, KICH, and KIRC are three subtypes of renal cell carcinoma. The tcga data is divided into the tumor samples, denoted as `*-tcga-t.txt`, and healthy tissue samples, denotes as `*-tcga.txt`. We also downloaded the gtex samples, which can now be direcly evaluated with the tcga normal samples. 
 
 
 
