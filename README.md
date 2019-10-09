@@ -1,5 +1,4 @@
-![alt text](https://github.com/mrbende/RNAprep/blob/master/Clemson.png "Clemson")
-![alt text](https://github.com/mrbende/RNAprep/blob/master/RareKidneyCancer.png "RKC.org")
+![alt text](https://github.com/mrbende/RNAprep/blob/master/Clemson.png "Clemson") ![alt text](https://github.com/mrbende/RNAprep/blob/master/RareKidneyCancer.png "RKC.org")
 
 # RNAprep
 Process for taking a single sample of Illumina RNA expression data, in fastq format, and processing it into FPKM values that are comparable to publicly available datasets.
