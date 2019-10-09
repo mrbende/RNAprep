@@ -1,3 +1,6 @@
+![alt text](https://github.com/mrbende/RNAprep/blob/master/Clemson.png "Clemson")
+![alt text](https://github.com/mrbende/RNAprep/blob/master/RareKidneyCancer.png "RKC.org")
+
 # RNAprep
 Process for taking a single sample of Illumina RNA expression data, in fastq format, and processing it into FPKM values that are comparable to publicly available datasets.
 
@@ -85,7 +88,7 @@ This is the ultimate result, a vector of FPKM expression values for the sample, 
 
 This [study](https://www.nature.com/articles/sdata201861) published the initial method for combining GTEx and TCGA data by a common processing method.
 
-![alt text](https://github.com/mrbende/RNAprep/blob/master/sdata201861-f1.jpg "Processing Method")
+![alt text](hhttps://github.com/mrbende/RNAprep/blob/master/Process.jpg "Processing Method")
 
 Here, we download the tissue datasets of interest from the public database. These files present normalized gene expression levels, in FPKM format, after being corrected for batch variations between GTEx and TCGA. These files, divided into independent files by tissue type, can be viewed in [figshare](https://figshare.com/articles/Data_record_3/5330593). Particular datasets of interest can be downloaded independently, or all can be downloaded together.
 
