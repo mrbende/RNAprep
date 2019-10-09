@@ -11,7 +11,7 @@ The **comprehensive gene annotation list** can be found [here](http://ftp.ebi.ac
 * [RSEM](https://github.com/deweylab/RSEM) quantification
 * [GEMprep](https://github.com/SystemsGenetics/GEMprep) repository tools
 
-NOTE: If you plan to append the sample of RNAseq data to an existing matrix of samples, [GEMprep](https://github.com/SystemsGenetics/GEMprep) offers an easy method of performing quantile normalization.
+NOTE: If you plan to append the sample of RNAseq data to an existing matrix of samples, GEMprep offers the tools to do that. 
 
 ## Process
 This process was developed using Clemson University's Palmetto Cluster, which utilizes the Portable Batch Scheduling system (PBS) to manage job submission. Most commands were wrapped into independent scripts that specified resource allocation and the exact command line parameters. The code is copied below, but considering the large resource requirements of these processes it is recommended that they be submitted as batch jobs if possible. It is also important that the STAR executable as well as the RSEM commands are recognizable within the system path, or otherwise are explicitly directed.
@@ -47,7 +47,7 @@ STAR --runThreadN 24 --runMode alignReads \
 ```
 By specifying the option  `--quantMode TranscriptomeSAM`, STAR will output a file `Aligned.toTranscriptome.bam`. This is what we will use for RSEM. For more information regarding these paramters, refer to the [STAR manual](http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf).
 
-If your fastq files are not pair-end reads, you will only have one read to input. Not all illumina results will appear in different 'lane' files, as this largely depends on the size of the inputs and numebr of genes sequenced. Alter this input to represent your data.
+If your fastq files are not pair-end reads, you will only have one read to input. Not all illumina results will appear in different 'lane' files, as this largely depends on the size of the inputs and numebr of genes sequenced. Alter the `--readFilesIn` flag to represent your data.
 
 **3. RSEM Prepare Genome Reference**
 ```
