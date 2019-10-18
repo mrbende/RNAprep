@@ -147,4 +147,6 @@ python gemmaker.py
 
 **6. Appending the sample expression data to this larger dataset**
 
-Once the GEM of tissue samples has been created...
+Once the GEM of tissue samples has been created, and the larger GEM of GTEx-TCGA data has been combined, the last step is to add the sample processed with STAR/RSEM to the larger sample of public data. This is most easily done by running `gemmaker.py` again. Create a **new** directory, containing `kidney_FPKM.txt` and `SAMPLE_NAME.fpkm.txt`. It is also possible to add multiple sample files, as it is often the case to have one 'normal' file and one 'tumor' sample. With this new directory, simplpy run `gemmaker.py` again.
+
+NOTE: This can be combined with the previous step to just run `gemmaker.py` once. It is recommended to do this seperately, however, because there are many downstream applications where it will be useful to have a separate GEM containing just the public data. 
