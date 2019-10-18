@@ -23,7 +23,7 @@ On the Palmetto Cluster, these jobs were submitted with the following parameters
 ```
 select=1:ncpus=24:mpiprocs=1:mem=494gb,walltime=12:00:00
 ```
-
+One "chunk" of hardware, 24 CPU cores, 494 gb of RAM, with 12 hours of allocated walltime. This is overkill for many of these jobs, however these programs do utilize significant compute resources. Use what you can.
 
 **1. Generate the Genome Index**
 ```
