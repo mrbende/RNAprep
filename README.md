@@ -151,4 +151,6 @@ Once the GEM of tissue samples has been created, and the larger GEM of GTEx-TCGA
 
 NOTE: This can be combined with the previous step to just run `gemmaker.py` once. It is recommended to do this seperately, however, because there are many downstream applications where it will be useful to have a separate GEM containing just the public data. 
 
-From here, we can now work with a single output file. We will call it a generic `GEM.txt` with a corresponding `labels.txt`. It is recommended that you assign a more descriptve output name when running.
+From here, we can now work with a single output file. We will call it a generic `GEM.txt` with a corresponding `labels.txt`. 
+
+**7. Normalize and Visualize the data with GEMPREP**
