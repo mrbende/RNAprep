@@ -100,22 +100,28 @@ kich-rsem-fpkm-tcga-t.txt
 kich-rsem-fpkm-tcga.txt
 kirc-rsem-fpkm-tcga-t.txt
 kirc-rsem-fpkm-tcga.txt
-```# This is the name of the output GEM
+```
+
 KIRP, KICH, and KIRC are three subtypes of renal cell carcinoma. The tcga data is divided into the tumor samples, denoted as `*-tcga-t.txt`, and healthy tissue samples, denotes as `*-tcga.txt`. We also downloaded the gtex samples, which can now be direcly evaluated with the tcga normal samples. 
 
 The recommended way to use the scripts in this repository is with an Anaconda environment. This is the Anaconda environemnt used by GEMprep later, but we will need some of these packages before then. To create an Anaconda environment:
-```bash
+
+```
 module add anaconda3/5.1.0
 
 conda create -n myenv python=3.6 matplotlib mpi4py numpy pandas r scikit-learn seaborn
 
 source deactivate
 ```
+
 All of the downloaded Gene Expression Matrices (GEMs) should be added to the same directory, containing **only** these files. Then, to activate the conda environment for running the python script...
+
 ```
 conda activate myenv
 ```
+
 The `gemmaker.py` script in this repo is used to merge all of the GEMs located in the directory while aligning the genes. It is important to make note of the beginnign of this python script.
+
 ```
 dir_path = '/scratch2/mrbende/KIDNEY/'
 
@@ -123,9 +129,11 @@ labels_file = 'kidney-labels.txt'
 
 GEM_file = 'kidney_FPKM.txt'
 ```
+
 These variables should be changed to reflect your environment. `dir_path` should be the absolute path where the directory containing the GEMs is located. The `labels_file` being generated will be relevant in downstream applications so just make note of it here. `GEM_file` will be the GEM that is created containing FPKM values of all samples.
 
 Once these script variables have been changed, simply run the python code. Note that it requires python3, so check the version.
+
 ```
 python gemmaker.py
 ```
