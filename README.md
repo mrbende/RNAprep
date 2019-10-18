@@ -18,6 +18,13 @@ NOTE: If you plan to append the sample of RNAseq data to an existing matrix of s
 ## Process
 This process was developed using Clemson University's Palmetto Cluster, which utilizes the Portable Batch Scheduling system (PBS) to manage job submission. Most commands were wrapped into independent scripts that specified resource allocation and the exact command line parameters. The code is copied below, but considering the large resource requirements of these processes it is recommended that they be submitted as batch jobs if possible. It is also important that the STAR executable as well as the RSEM commands are recognizable within the system path, or otherwise are explicitly directed.
 
+On the Palmetto Cluster, these jobs were submitted with the following parameters:
+
+```
+select=1:ncpus=24:mpiprocs=1:mem=494gb,walltime=12:00:00
+```
+
+
 **1. Generate the Genome Index**
 ```
 STAR --runThreadN 24 --runMode genomeGenerate \
