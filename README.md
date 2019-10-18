@@ -69,7 +69,7 @@ The -p flag replaces the `--runThreadN` flag before, and still represnts the num
 
 **4. RSEM calculate expression**
 
-Before calculating expression, it is important to verify that the input files are valid because we used an alternate aligner (RSEM defaults to Bowtie aligner, this process uses STAR). RSEM requires that the two mates of any paired-end alignements be adjacent. To check this, run the following:
+Before calculating expression, it is important to verify that the input files are valid because we used an alternate aligner (RSEM defaults to Bowtie aligner, this process uses STAR). RSEM requires that the two mates of any paired-end alignments be adjacent. To check this, run the following:
 ```
 /path/to/RSEM/rsem-sam-validator DESIRED_FILE_PREFIXAligned.toTranscriptome.out.bam
 ```
