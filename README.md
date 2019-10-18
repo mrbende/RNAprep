@@ -125,7 +125,7 @@ GEM_file = 'kidney_FPKM.txt'
 ```
 These variables should be changed to reflect your environment. `dir_path` should be the absolute path where the directory containing the GEMs is located. The `labels_file` being generated will be relevant in downstream applications so just make note of it here. `GEM_file` will be the GEM that is created containing FPKM values of all samples.
 
-Once editing these script variables, simply run the python code. Note that it requires python3, so check the version.
+Once these script variables have been changed, simply run the python code. Note that it requires python3, so check the version.
 ```
 python gemmaker.py
 ```
