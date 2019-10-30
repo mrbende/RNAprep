@@ -66,6 +66,7 @@ If your fastq files are not pair-end reads, you will only have one read to input
 /path/to/desired/output/human_ref/hg19
 ```
 The -p flag replaces the `--runThreadN` flag before, and still represnts the number of threads available. This command takes the same inputs as when genrating the genome index with STAR, however greates a unique reference directory for use with RSEM. Ensure that this output directory does not overwrite the directory generated with STAR, as it will be used in the next step... 
+It is also worth noting that RSEM's `rsem-prepare-reference` command will run the STAR `genomegenerate` command as a part of its process. This results in some redundancy, but current configuration uses the STAR command to align the genome and the RSEM command to calculate expression. 
 
 **4. RSEM calculate expression**
 
